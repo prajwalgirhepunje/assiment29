@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Tool</title>
+<style>
+   body{
+    background-color: #ff1a1a;
+   }
+.app-title{
+    text-align: center;
+}
+.input-text{
+    width: 70%;
+    display: block;
+    margin: 10px auto;
+    height: 100px;
+    background-color: aquamarine;
+}
+.btns-container{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.result-text{
+    width: 70%;
+    display: block;
+    margin: 10px auto;
+    height: 100px;
+}
+.action-btn{
+    margin: 10PX;
+    padding: 5PX;
+    border-radius: 10PX;
+    background-color: #ff1aff;
+    color:#FFF;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <i><u> <h1 class="app-title">Text Tool</h1></u></i> 
+    <input type="text" class="input-text" id="input-text"/>
+    <p id="result-text" class="result-text"></p>
+    <div class="btns-container">
+        <button class="action-btn" onclick="makeuppercase()">uppercase</button>
+        <button class="action-btn" onclick="maKeLowerCase()">lowercase</button>
+        <button class="action-btn" onclick="charcount()">charecter count</button>
+        <button class="action-btn" onclick="wordcount()">word count</button>
+
+    </div>
+<script>
+    function makeuppercase(){
+        const inputElement = document.getElementById("input-text")
+        const resultElement = document.getElementById("result-text")
+        resultElement.innerText = inputElement.value.toUpperCase()
+    }
+    function maKeLowerCase(){
+        const inputElement = document.getElementById("input-text")
+        const resultElement = document.getElementById("result-text")
+        resultElement.innerText = inputElement.value.toLowerCase()
+    }
+   function charcount(){
+        const inputElement = document.getElementById("input-text")
+        const resultElement = document.getElementById("result-text")
+        resultElement.innerText = inputElement.value.length
+    }
+    function wordcount(){
+        const inputElement = document.getElementById("input-text")
+        const resultElement = document.getElementById("result-text")
+        resultElement.innerText = inputElement.value.split(/\s+/).length;
+    }
+</script>
+</body>
+</html>
